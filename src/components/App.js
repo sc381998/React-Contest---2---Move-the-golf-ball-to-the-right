@@ -34,8 +34,8 @@ class App extends Component {
       this.setState({
         posi: this.state.posi + 5,
         ballPosition: {
-          left: this.state.ballPosition.left.split("px")[0] + 5 + "px"
-          // left: `${this.state.posi}px`
+          // left: this.state.ballPosition.left.split("px")[0] + 5 + "px"
+          left: `${this.state.posi}px`
         }
       });
     }
