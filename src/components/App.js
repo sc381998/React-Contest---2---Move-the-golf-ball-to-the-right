@@ -30,18 +30,18 @@ class App extends Component {
       );
   }
 
-  callback() {
-    this.setState({
-      ballPosition: { left: this.state.posi + "px" }
-    });
-  }
-
   handleKeyDown(event) {
     if (event.keyCode === 39) {
-      this.setState({
-        posi: this.state.posi + 5
-      });
-      this.callback();
+      this.setState(
+        {
+          posi: this.state.posi + 5
+        },
+        () => {
+          this.setState({
+            ballPosition: { left: this.state.posi + "px" }
+          });
+        }
+      );
     }
   }
   //bind ArrowRight keydown event
