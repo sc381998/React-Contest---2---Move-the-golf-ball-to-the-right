@@ -32,9 +32,10 @@ class App extends Component {
 
   callback() {
     this.setState({
-      ballPosition: { left: `${this.state.posi}px` }
+      ballPosition: { left: this.state.posi + "px" }
     });
   }
+
   handleKeyDown(event) {
     if (event.keyCode === 39) {
       this.setState({
