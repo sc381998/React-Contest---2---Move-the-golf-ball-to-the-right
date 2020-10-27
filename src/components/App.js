@@ -12,7 +12,6 @@ class App extends Component {
     this.renderChoice = this.renderChoice.bind(this);
     this.buttonClickHandler = this.buttonClickHandler.bind(this);
     this.handleKeyDown = this.handleKeyDown.bind(this);
-    this.callback = this.callback.bind(this);
   }
 
   //call back function
