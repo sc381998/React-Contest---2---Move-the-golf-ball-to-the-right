@@ -20,6 +20,7 @@ class App extends Component {
       renderBall: !this.state.renderBall
     });
   }
+
   renderChoice() {
     if (this.state.renderBall) {
       return <div className="ball" style={this.state.ballPosition}></div>;
