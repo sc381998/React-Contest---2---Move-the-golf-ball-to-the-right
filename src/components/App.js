@@ -1,4 +1,4 @@
-import React, { Component, useState } from "react";
+import React, { Component, useCallback, useState } from "react";
 import "../styles/App.css";
 
 class App extends Component {
@@ -12,6 +12,7 @@ class App extends Component {
     this.renderChoice = this.renderChoice.bind(this);
     this.buttonClickHandler = this.buttonClickHandler.bind(this);
     this.handleKeyDown = this.handleKeyDown.bind(this);
+    this.callback = this.callback.bind(this);
   }
 
   //call back function
@@ -29,15 +30,17 @@ class App extends Component {
       );
   }
 
+  callback() {
+    this.setState({
+      ballPosition: { left: `${this.state.posi}px` }
+    });
+  }
   handleKeyDown(event) {
     if (event.keyCode === 39) {
       this.setState({
-        posi: this.state.posi + 5,
-        ballPosition: {
-          // left: this.state.ballPosition.left.split("px")[0] + 5 + "px"
-          left: `${this.state.posi}px`
-        }
+        posi: this.state.posi + 5
       });
+      this.callback();
     }
   }
   //bind ArrowRight keydown event
